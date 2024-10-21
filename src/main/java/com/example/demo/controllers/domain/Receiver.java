@@ -1,7 +1,8 @@
 package com.example.demo.controllers.domain;
 
-public class Receiver {
+public record Receiver(
+        String name,
+        String phone
+) {
 
-    private String name;
-    private String phone;
 }

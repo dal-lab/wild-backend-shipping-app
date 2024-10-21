@@ -1,6 +1,7 @@
 package com.example.demo.controllers.domain;
 
-public class CargoId {
+public record CargoId(
+        String id
+) {
 
-    private String id;
 }
