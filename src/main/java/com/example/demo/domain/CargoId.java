@@ -1,4 +1,4 @@
-package com.example.demo.controllers.domain;
+package com.example.demo.domain;
 
 public record CargoId(
         String id
