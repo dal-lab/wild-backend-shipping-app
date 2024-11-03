@@ -20,4 +20,9 @@ public class CargoService {
         return cargo.createCargo(cargoCreateRequestDto);
     }
 
+    // 추적하기
+    public CargoResponseDto getCargo(String trackingId) {
+        return cargo.getCargo(trackingId);
+    }
+
 }
