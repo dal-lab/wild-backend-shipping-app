@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.controllers.dto.CargoCreateRequestDto;
 import com.example.demo.controllers.dto.CargoResponseDto;
+import com.example.demo.controllers.dto.CargoUpdateDto;
 import com.example.demo.model.Cargo;
 import org.springframework.stereotype.Service;
 
@@ -24,5 +25,15 @@ public class CargoService {
     public CargoResponseDto getCargo(String trackingId) {
         return cargo.getCargo(trackingId);
     }
+
+    // 상태변경하기
+    public CargoResponseDto updateCargo(
+            String trackingId,
+            CargoUpdateDto cargoUpdateDto
+    ) {
+        return cargo.updateCargo(trackingId, cargoUpdateDto);
+    }
+
+
 
 }
