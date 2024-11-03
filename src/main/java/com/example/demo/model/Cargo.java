@@ -28,6 +28,11 @@ public class Cargo {
         return getCargoResponseDto(cargoItem);
     }
 
+    // 화물의 배송 현황 추적
+    public CargoResponseDto getCargo(String trackingId) {
+        CargoItem cargoItem = getCargoItem(trackingId);
+        return getCargoResponseDto(cargoItem);
+    }
 
     private CargoResponseDto getCargoResponseDto(CargoItem cargoItem) {
         return new CargoResponseDto(
@@ -67,4 +72,5 @@ public class Cargo {
                 new Status("배송 대기중", CurrentStatus.PENDING)
         );
     }
+
 }
