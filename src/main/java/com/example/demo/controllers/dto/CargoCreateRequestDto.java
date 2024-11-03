@@ -7,24 +7,25 @@ import com.example.demo.model.Length;
 import com.example.demo.model.Name;
 import com.example.demo.model.StartLocation;
 import com.example.demo.model.Weight;
-import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
 public record CargoCreateRequestDto(
-        @NotBlank
+        @NotNull(message = "Name is required")
         Name name,
-        @NotBlank
+        @NotNull(message = "Description is required")
         Description description,
-        @NotBlank
+        @Min(1)
         int quantity,
-        @NotBlank
+        @NotNull(message = "Weight is required")
         Weight weight,
-        @NotBlank
+        @NotNull(message = "Length is required")
         Length length,
-        @NotBlank
+        @NotNull(message = "Height is required")
         Height height,
-        @NotBlank
+        @NotNull(message = "StartLocation is required")
         StartLocation startLocation,
-        @NotBlank
+        @NotNull(message = "EndLocation is required")
         EndLocation endLocation
 ) {
 
