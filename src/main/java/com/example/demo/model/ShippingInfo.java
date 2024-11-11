@@ -1,8 +1,8 @@
 package com.example.demo.model;
 
-public class ShippingInfo {
-    private ShippingId shippingId;
-    private Sender sender;
-    private Receiver receiver;
-    private Address address;
+public record ShippingInfo (
+        Sender sender,
+        Receiver receiver,
+        Address address
+) {
 }
