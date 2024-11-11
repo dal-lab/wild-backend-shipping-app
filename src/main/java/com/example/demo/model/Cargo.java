@@ -18,7 +18,8 @@ public class Cargo {
       Length length,
       Width width,
       Weight weight,
-      ShippingInfo shippingInfo
+      ShippingInfo shippingInfo,
+      CurrentInfo currentInfo
   ) {
     setCargoId(cargoId);
     setDetail(detail);
@@ -27,14 +28,14 @@ public class Cargo {
     setWidth(width);
     setWeight(weight);
     setShippingInfo(shippingInfo);
+    setCurrentInfo(currentInfo);
   }
 
   // 화물 예약하기
-
+  
   // 화물의 배송 현황 추적
 
   // 화물 배송 상태 변경
-
 
   private void setCargoId(CargoId cargoId) {
     if (cargoId == null) {
@@ -85,6 +86,13 @@ public class Cargo {
     this.shippingInfo = shippingInfo;
   }
 
+  private void setCurrentInfo(CurrentInfo currentInfo) {
+    if (currentInfo == null) {
+      throw new IllegalArgumentException("no currentInfo info");
+    }
+    this.currentInfo = currentInfo;
+  }
+
   public CargoId getCargoId() {
     return cargoId;
   }
@@ -111,5 +119,9 @@ public class Cargo {
 
   public ShippingInfo getShippingInfo() {
     return shippingInfo;
+  }
+
+  public CurrentInfo getCurrentInfo() {
+    return currentInfo;
   }
 }
