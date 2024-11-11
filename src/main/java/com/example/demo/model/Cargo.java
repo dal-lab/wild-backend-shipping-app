@@ -9,6 +9,7 @@ public class Cargo {
   private Width width;
   private Weight weight;
   private ShippingInfo shippingInfo;
+  private CurrentInfo currentInfo;
 
   public Cargo(
       CargoId cargoId,

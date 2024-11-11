@@ -1,6 +1,11 @@
 package com.example.demo.model;
 
-public class Status {
-
-
+public enum Status {
+    PENDING,
+    IN_TRANSIT,
+    DELIVERED,
+    RETURNED,
+    CANCELLED,
+    ON_HOLD,
+    FAILED_DELIVERY
 }
