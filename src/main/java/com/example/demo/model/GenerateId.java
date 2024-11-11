@@ -9,19 +9,20 @@ public record GenerateId(
 ) {
 
     public GenerateId() {
-        this(new CargoIdGenerator().createId());
-    }
-
-    private static class CargoIdGenerator {
-
-        public String createId() {
-            LocalDateTime now = LocalDateTime.now();
-            DateTimeFormatter formatter =
-                    DateTimeFormatter.ofPattern("yyyyMMddHHmm");
-            String dateTime = now.format(formatter);
-            String shortUUID = UUID.randomUUID().toString().substring(0, 4);
-
-            return dateTime + shortUUID;
-        }
+        this(new IdGenerator().generateId());
     }
 }
+
+class IdGenerator {
+
+    public String generateId() {
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter =
+                DateTimeFormatter.ofPattern("yyyyMMddHHmm");
+        String dateTime = now.format(formatter);
+        String shortUUID = UUID.randomUUID().toString().substring(0, 4);
+
+        return dateTime + shortUUID;
+    }
+}
+
