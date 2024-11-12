@@ -5,4 +5,7 @@ public record CurrentInfo(
         PortCity portCity
 ) {
 
+    public static CurrentInfo createInitial(PortCity portCity) {
+        return new CurrentInfo(Status.PENDING, portCity);
+    }
 }

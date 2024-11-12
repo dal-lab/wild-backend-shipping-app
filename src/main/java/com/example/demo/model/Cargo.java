@@ -32,7 +32,32 @@ public class Cargo {
   }
 
   // 화물 예약하기
-  
+  public void bookCargo(
+      Detail detail,
+      Height height,
+      Length length,
+      Width width,
+      Weight weight,
+      ShippingInfo shippingInfo,
+      CurrentInfo currentInfo
+
+  ) {
+    CargoId id = new CargoId();
+    setCargoId(id);
+    setDetail(detail);
+    setHeight(height);
+    setLength(length);
+    setWidth(width);
+    setWeight(weight);
+    setShippingInfo(shippingInfo);
+
+    CurrentInfo initialInfo =
+        CurrentInfo.createInitial(currentInfo.portCity());
+
+    setCurrentInfo(initialInfo);
+
+  }
+
   // 화물의 배송 현황 추적
 
   // 화물 배송 상태 변경
